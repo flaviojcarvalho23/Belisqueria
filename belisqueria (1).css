@@ -1,0 +1,754 @@
+/* =========================================================
+   BELISQUERIA | CSS ADICIONAL UNIFICADO
+   Baseado no brandbook anexado
+   Uso: WordPress > Aparência > Personalizar > CSS Adicional
+   ou Elementor > Custom CSS / Site Settings
+========================================================= */
+
+/* =========================
+   1. TOKENS GLOBAIS
+========================= */
+:root{
+  /* PALETA PRINCIPAL */
+  --beli-bg: #F7F2EB;
+  --beli-surface: #FFFFFF;
+  --beli-surface-2: #F2EEE8;
+  --beli-cream: #F5F1EA;
+
+  --beli-ink: #111114;
+  --beli-ink-soft: #47433F;
+  --beli-muted: #756D66;
+
+  --beli-red: #F6071A;
+  --beli-orange: #FE8B15;
+  --beli-black: #0A0A0D;
+
+  /* LINHAS / BORDAS */
+  --beli-line: rgba(17,17,20,.10);
+  --beli-line-soft: rgba(17,17,20,.08);
+  --beli-line-strong: rgba(17,17,20,.18);
+
+  /* TRANSPARÊNCIAS DE APOIO */
+  --beli-red-08: rgba(246,7,26,.08);
+  --beli-red-10: rgba(246,7,26,.10);
+  --beli-red-12: rgba(246,7,26,.12);
+  --beli-red-16: rgba(246,7,26,.16);
+  --beli-red-24: rgba(246,7,26,.24);
+
+  --beli-orange-08: rgba(254,139,21,.08);
+  --beli-orange-10: rgba(254,139,21,.10);
+  --beli-orange-12: rgba(254,139,21,.12);
+  --beli-orange-26: rgba(254,139,21,.26);
+
+  --beli-white-03: rgba(255,255,255,.03);
+  --beli-white-08: rgba(255,255,255,.08);
+  --beli-white-10: rgba(255,255,255,.10);
+  --beli-white-12: rgba(255,255,255,.12);
+  --beli-white-18: rgba(255,255,255,.18);
+  --beli-white-60: rgba(255,255,255,.60);
+  --beli-white-72: rgba(255,255,255,.72);
+  --beli-white-78: rgba(255,255,255,.78);
+  --beli-white-84: rgba(255,255,255,.84);
+  --beli-white-88: rgba(255,255,255,.88);
+  --beli-white-92: rgba(255,255,255,.92);
+  --beli-white-96: rgba(255,255,255,.96);
+
+  /* GRADIENTES */
+  --beli-gradient-brand: linear-gradient(135deg, #FE8B15, #F6071A);
+  --beli-gradient-body: linear-gradient(180deg, #FAF6F1 0%, #F5F0E9 100%);
+  --beli-gradient-hero: linear-gradient(135deg, #16161B 0%, #2A1718 48%, #4A130E 100%);
+  --beli-gradient-card: linear-gradient(180deg, rgba(255,255,255,.92), rgba(242,238,232,.96));
+  --beli-gradient-panel: linear-gradient(180deg, rgba(255,255,255,.60), rgba(242,238,232,.80));
+  --beli-gradient-dark-card: linear-gradient(180deg, #131318, #09090C);
+  --beli-gradient-highlight: linear-gradient(135deg, rgba(254,139,21,.12), rgba(246,7,26,.08));
+
+  /* SOMBRAS */
+  --beli-shadow-soft: 0 22px 56px rgba(17,17,20,.08);
+  --beli-shadow-hero: 0 28px 70px rgba(17,17,20,.24);
+  --beli-shadow-brand: 0 10px 24px rgba(246,7,26,.16);
+
+  /* RAIOS */
+  --beli-radius-xs: 10px;
+  --beli-radius-sm: 14px;
+  --beli-radius-md: 16px;
+  --beli-radius-lg: 22px;
+  --beli-radius-xl: 30px;
+  --beli-radius-2xl: 36px;
+
+  /* TRANSIÇÕES */
+  --beli-transition: all .28s ease;
+}
+
+
+/* =========================
+   2. BASE GLOBAL
+========================= */
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at top left, rgba(254,139,21,.12), transparent 26%),
+    radial-gradient(circle at top right, rgba(246,7,26,.08), transparent 24%),
+    var(--beli-gradient-body);
+  color:var(--beli-ink);
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+body,
+button,
+input,
+select,
+textarea{
+  color:var(--beli-ink);
+}
+
+a{
+  color:var(--beli-red);
+  text-decoration:none;
+  transition:var(--beli-transition);
+}
+
+a:hover,
+a:focus{
+  color:var(--beli-orange);
+}
+
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+::selection{
+  background:var(--beli-red);
+  color:#fff;
+}
+
+
+/* =========================
+   3. TIPOGRAFIA
+========================= */
+h1,h2,h3,h4,h5,h6{
+  color:var(--beli-black);
+  line-height:1.08;
+  margin-top:0;
+}
+
+h1,h2{
+  font-family:"Arial Narrow", Arial, Helvetica, sans-serif;
+  text-transform:uppercase;
+}
+
+h1{
+  font-size:clamp(2.1rem, 4vw, 4rem);
+  letter-spacing:.02em;
+}
+
+h2{
+  font-size:clamp(1.55rem, 2.4vw, 2.55rem);
+}
+
+h3{
+  font-size:1.35rem;
+}
+
+h4{
+  font-size:1.1rem;
+}
+
+p,
+li,
+td,
+th,
+label{
+  color:var(--beli-ink-soft);
+}
+
+small,
+.muted,
+.text-muted{
+  color:var(--beli-muted);
+}
+
+
+/* =========================
+   4. FUNDOS E BLOCOS
+========================= */
+.beli-bg{
+  background:var(--beli-bg) !important;
+}
+
+.beli-surface{
+  background:var(--beli-surface) !important;
+}
+
+.beli-surface-soft{
+  background:var(--beli-surface-2) !important;
+}
+
+.beli-cream{
+  background:var(--beli-cream) !important;
+}
+
+.beli-dark{
+  background:var(--beli-gradient-dark-card) !important;
+  color:#fff !important;
+}
+
+.beli-hero{
+  background:var(--beli-gradient-hero) !important;
+  color:#fff !important;
+  border-radius:var(--beli-radius-2xl);
+  box-shadow:var(--beli-shadow-hero);
+  position:relative;
+  overflow:hidden;
+}
+
+.beli-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 16% 22%, rgba(254,139,21,.26), transparent 18%),
+    radial-gradient(circle at 86% 16%, rgba(246,7,26,.24), transparent 18%),
+    radial-gradient(circle at 72% 80%, rgba(255,255,255,.08), transparent 22%);
+}
+
+.beli-highlight{
+  background:var(--beli-gradient-highlight);
+  border:1px solid var(--beli-red-12);
+  border-radius:var(--beli-radius-lg);
+}
+
+.beli-brand-gradient{
+  background:var(--beli-gradient-brand) !important;
+  color:#fff !important;
+}
+
+
+/* =========================
+   5. CARDS / PAINÉIS
+========================= */
+.beli-card,
+.beli-panel{
+  background:var(--beli-white-84);
+  border:1px solid var(--beli-line-soft);
+  border-radius:var(--beli-radius-xl);
+  box-shadow:var(--beli-shadow-soft);
+}
+
+.beli-card{
+  padding:20px;
+}
+
+.beli-panel{
+  padding:24px;
+}
+
+.beli-card-soft{
+  background:var(--beli-gradient-card);
+  border:1px solid var(--beli-line);
+  border-radius:var(--beli-radius-lg);
+  padding:20px;
+}
+
+.beli-card-dark{
+  background:var(--beli-gradient-dark-card);
+  color:var(--beli-white-92);
+  border:1px solid var(--beli-white-08);
+  border-radius:var(--beli-radius-lg);
+  padding:20px;
+}
+
+.beli-card-dark h1,
+.beli-card-dark h2,
+.beli-card-dark h3,
+.beli-card-dark h4,
+.beli-card-dark h5,
+.beli-card-dark h6,
+.beli-card-dark p,
+.beli-card-dark li{
+  color:#fff;
+}
+
+
+/* =========================
+   6. BORDAS / LINHAS
+========================= */
+.beli-border{
+  border:1px solid var(--beli-line) !important;
+}
+
+.beli-border-soft{
+  border:1px solid var(--beli-line-soft) !important;
+}
+
+.beli-border-strong{
+  border:1px solid var(--beli-line-strong) !important;
+}
+
+hr{
+  border:none;
+  border-top:1px solid var(--beli-line);
+  margin:24px 0;
+}
+
+
+/* =========================
+   7. CORES DE TEXTO
+========================= */
+.beli-text-main{ color:var(--beli-ink) !important; }
+.beli-text-soft{ color:var(--beli-ink-soft) !important; }
+.beli-text-muted{ color:var(--beli-muted) !important; }
+.beli-text-red{ color:var(--beli-red) !important; }
+.beli-text-orange{ color:var(--beli-orange) !important; }
+.beli-text-black{ color:var(--beli-black) !important; }
+.beli-text-white{ color:#fff !important; }
+
+
+/* =========================
+   8. BOTÕES
+========================= */
+button,
+.elementor-button,
+.wp-block-button__link{
+  transition:var(--beli-transition);
+}
+
+.beli-btn,
+.elementor-button.beli-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:48px;
+  padding:12px 22px;
+  border-radius:999px;
+  font-weight:700;
+  line-height:1;
+  border:1px solid transparent;
+  text-decoration:none;
+  cursor:pointer;
+}
+
+.beli-btn-primary,
+.elementor-button.beli-btn-primary{
+  background:var(--beli-red);
+  color:#fff !important;
+  border-color:var(--beli-red);
+  box-shadow:0 10px 24px rgba(246,7,26,.16);
+}
+
+.beli-btn-primary:hover,
+.elementor-button.beli-btn-primary:hover{
+  background:var(--beli-orange);
+  border-color:var(--beli-orange);
+  color:#fff !important;
+  transform:translateY(-1px);
+}
+
+.beli-btn-secondary,
+.elementor-button.beli-btn-secondary{
+  background:transparent;
+  color:var(--beli-red) !important;
+  border-color:var(--beli-red);
+}
+
+.beli-btn-secondary:hover,
+.elementor-button.beli-btn-secondary:hover{
+  background:var(--beli-red-08);
+  color:var(--beli-red) !important;
+  transform:translateY(-1px);
+}
+
+.beli-btn-dark,
+.elementor-button.beli-btn-dark{
+  background:var(--beli-black);
+  color:#fff !important;
+  border-color:var(--beli-black);
+}
+
+.beli-btn-dark:hover,
+.elementor-button.beli-btn-dark:hover{
+  background:var(--beli-red);
+  border-color:var(--beli-red);
+  color:#fff !important;
+}
+
+.beli-btn-light,
+.elementor-button.beli-btn-light{
+  background:#fff;
+  color:var(--beli-black) !important;
+  border:1px solid var(--beli-line);
+}
+
+.beli-btn-light:hover,
+.elementor-button.beli-btn-light:hover{
+  background:var(--beli-surface-2);
+}
+
+
+/* =========================
+   9. TAGS / CHIPS / BADGES
+========================= */
+.beli-tag,
+.beli-chip,
+.beli-badge{
+  display:inline-flex;
+  align-items:center;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:.76rem;
+  font-weight:700;
+  line-height:1.1;
+  border:1px solid var(--beli-red-10);
+  background:var(--beli-red-08);
+  color:var(--beli-red);
+}
+
+.beli-tag-orange{
+  background:var(--beli-orange-08);
+  color:var(--beli-orange);
+  border-color:var(--beli-orange-10);
+}
+
+.beli-tag-dark{
+  background:var(--beli-black);
+  color:#fff;
+  border-color:var(--beli-black);
+}
+
+
+/* =========================
+   10. FORMULÁRIOS
+========================= */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="number"],
+input[type="date"],
+select,
+textarea{
+  width:100%;
+  background:#fff;
+  color:var(--beli-ink);
+  border:1px solid var(--beli-line);
+  border-radius:16px;
+  padding:14px 16px;
+  transition:var(--beli-transition);
+  outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--beli-red);
+  box-shadow:0 0 0 4px var(--beli-red-08);
+}
+
+::placeholder{
+  color:var(--beli-muted);
+  opacity:1;
+}
+
+
+/* =========================
+   11. TABELAS
+========================= */
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+  border:1px solid var(--beli-line);
+  border-radius:18px;
+  overflow:hidden;
+}
+
+th,
+td{
+  padding:14px 16px;
+  text-align:left;
+  vertical-align:top;
+  border-bottom:1px solid var(--beli-line-soft);
+}
+
+th{
+  background:linear-gradient(180deg, rgba(254,139,21,.10), rgba(246,7,26,.06));
+  color:var(--beli-black);
+  font-size:.82rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+tr:last-child td{
+  border-bottom:0;
+}
+
+
+/* =========================
+   12. LISTAS / CAIXAS DE CONTEÚDO
+========================= */
+ul.clean,
+ol.clean{
+  margin:10px 0 0;
+  padding-left:18px;
+}
+
+ul.clean li + li,
+ol.clean li + li{
+  margin-top:6px;
+}
+
+.beli-quote{
+  padding:22px;
+  border-radius:22px;
+  background:var(--beli-gradient-highlight);
+  border:1px solid var(--beli-red-12);
+  color:var(--beli-black);
+  font-size:1.12rem;
+  font-weight:700;
+}
+
+
+/* =========================
+   13. TOPO / NAV / BLOCO GLASS
+========================= */
+.beli-topbar,
+.beli-glass{
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  background:rgba(247,242,235,.84);
+  border:1px solid var(--beli-line-soft);
+}
+
+.beli-nav-pill{
+  display:inline-flex;
+  align-items:center;
+  padding:10px 14px;
+  border-radius:999px;
+  background:var(--beli-white-78);
+  border:1px solid var(--beli-line-soft);
+  color:var(--beli-ink-soft);
+  font-size:.9rem;
+  font-weight:700;
+}
+
+.beli-nav-pill:hover{
+  color:var(--beli-red);
+  border-color:var(--beli-red-10);
+  background:#fff;
+}
+
+
+/* =========================
+   14. UTILITÁRIOS DE FUNDO
+========================= */
+.bg-beli-red{ background:var(--beli-red) !important; }
+.bg-beli-orange{ background:var(--beli-orange) !important; }
+.bg-beli-black{ background:var(--beli-black) !important; }
+.bg-beli-white{ background:#fff !important; }
+.bg-beli-soft{ background:var(--beli-surface-2) !important; }
+.bg-beli-brand{ background:var(--beli-gradient-brand) !important; }
+
+
+/* =========================
+   15. UTILITÁRIOS DE SOMBRA
+========================= */
+.shadow-beli-soft{ box-shadow:var(--beli-shadow-soft) !important; }
+.shadow-beli-hero{ box-shadow:var(--beli-shadow-hero) !important; }
+.shadow-beli-brand{ box-shadow:var(--beli-shadow-brand) !important; }
+
+
+/* =========================
+   16. UTILITÁRIOS DE RAIO
+========================= */
+.radius-beli-sm{ border-radius:var(--beli-radius-sm) !important; }
+.radius-beli-md{ border-radius:var(--beli-radius-md) !important; }
+.radius-beli-lg{ border-radius:var(--beli-radius-lg) !important; }
+.radius-beli-xl{ border-radius:var(--beli-radius-xl) !important; }
+.radius-beli-pill{ border-radius:999px !important; }
+
+
+/* =========================
+   17. AJUSTES PARA ELEMENTOR
+========================= */
+.elementor-section.beli-section-soft,
+.elementor-container.beli-section-soft,
+.elementor-element.beli-section-soft{
+  background:var(--beli-surface-2);
+}
+
+.elementor-widget-container .beli-card,
+.elementor-widget-container .beli-panel,
+.elementor-widget-container .beli-card-soft,
+.elementor-widget-container .beli-card-dark{
+  width:100%;
+}
+
+.elementor-button-text{
+  transition:var(--beli-transition);
+}
+
+/* caixas comuns do Elementor */
+.elementor-widget-icon-box.beli-card .elementor-widget-container,
+.elementor-widget-image-box.beli-card .elementor-widget-container,
+.elementor-widget-call-to-action.beli-card .elementor-widget-container{
+  background:var(--beli-gradient-card);
+  border:1px solid var(--beli-line);
+  border-radius:var(--beli-radius-lg);
+  box-shadow:var(--beli-shadow-soft);
+  padding:20px;
+}
+
+/* títulos */
+.elementor-heading-title{
+  color:var(--beli-black);
+}
+
+/* textos */
+.elementor-text-editor,
+.elementor-text-editor p,
+.elementor-icon-list-text{
+  color:var(--beli-ink-soft);
+}
+
+
+/* =========================
+   18. WOOCOMMERCE
+========================= */
+.woocommerce div.product,
+.woocommerce-page div.product,
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product{
+  color:var(--beli-ink);
+}
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product{
+  background:#fff;
+  border:1px solid var(--beli-line);
+  border-radius:var(--beli-radius-lg);
+  padding:18px;
+  box-shadow:var(--beli-shadow-soft);
+}
+
+.woocommerce ul.products li.product .price,
+.woocommerce div.product p.price,
+.woocommerce div.product span.price{
+  color:var(--beli-red);
+  font-weight:700;
+}
+
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit{
+  background:var(--beli-red);
+  color:#fff;
+  border-radius:999px;
+  border:1px solid var(--beli-red);
+  transition:var(--beli-transition);
+}
+
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.woocommerce #respond input#submit:hover{
+  background:var(--beli-orange);
+  border-color:var(--beli-orange);
+  color:#fff;
+}
+
+
+/* =========================
+   19. RODAPÉ
+========================= */
+footer,
+.site-footer{
+  background:var(--beli-black);
+  color:var(--beli-white-88);
+}
+
+footer a,
+.site-footer a{
+  color:#fff;
+}
+
+footer a:hover,
+.site-footer a:hover{
+  color:var(--beli-orange);
+}
+
+
+/* =========================
+   20. RESPONSIVO
+========================= */
+@media (max-width: 1024px){
+  .beli-card,
+  .beli-card-soft,
+  .beli-card-dark,
+  .beli-panel{
+    padding:18px;
+  }
+}
+
+@media (max-width: 767px){
+  h1{
+    font-size:clamp(1.9rem, 8vw, 2.8rem);
+  }
+
+  h2{
+    font-size:clamp(1.35rem, 6vw, 2rem);
+  }
+
+  .beli-hero{
+    border-radius:28px;
+  }
+
+  .beli-card,
+  .beli-card-soft,
+  .beli-card-dark,
+  .beli-panel{
+    padding:16px;
+    border-radius:18px;
+  }
+
+  th,
+  td{
+    padding:12px;
+  }
+
+  .beli-btn,
+  .elementor-button.beli-btn{
+    min-height:46px;
+    padding:11px 18px;
+  }
+}
+
+
+/* =========================
+   21. PRESERVAÇÃO DE COERÊNCIA VISUAL
+========================= */
+.has-beli-branding{
+  background:var(--beli-gradient-body);
+  color:var(--beli-ink);
+}
+
+.has-beli-branding .section-title,
+.has-beli-branding .widget-title,
+.has-beli-branding .entry-title{
+  color:var(--beli-black);
+}
+
+.has-beli-branding .section-subtitle,
+.has-beli-branding .entry-summary{
+  color:var(--beli-ink-soft);
+}
